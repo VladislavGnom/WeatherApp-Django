@@ -1,0 +1,1 @@
+This web application of mine, written in Django, serves to display the weather for our users. And under the hood we have the OpenWeather service with its own API for accessing weather data. It's in the general application, check it out when you find the time.
