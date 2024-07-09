@@ -1,0 +1,26 @@
+{% extends 'base-generic.html' %}
+
+{% block main %}
+<h1 class="text-center">Get Weather</h1>
+<div class="row">
+    <div class="col-8 mx-auto text-center mt-3">
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="name_city" placeholder="Введите название города" required>
+        <button class="btn btn-success btn-sm" type="submit">Check Weather</button>
+    </form>
+    </div>
+</div>
+<div class="row {% if not url_icon %}d-none{% endif %}">
+    <div class="col-8 mx-auto text-center mt-3">
+        <h2>Detail - {{ city }}:</h2>
+        <p>
+            <span class="h5">Weather:</span> {{ weather }} <img src='{{ url_icon }}' alt="Icon Weather"><br>
+            <span class="h5">Temp:</span> {{ temp }}℃<br>
+            <span class="h5">Wind speed:</span> {{ wind_speed }} м/с<br>
+            <span class="h5">Humidity:</span> {{ humidity }}%<br>
+            <span class="h5">Pressure:</span> {{ pressure }} mmHg<br>
+        </p>
+    </div>
+</div>
+{% endblock %}
